@@ -1,12 +1,16 @@
-import React from 'react';
-import Vaccinations from './components/Vaccinations'
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Vaccinations from './pages/Vaccinations'
+import VaccineOrders from './pages/VaccineOrders'
 
 const App = () => {
   return (
-    <div> 
-      <h1>Vaccinations</h1>
-      <Vaccinations />
-    </div>
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/vaccineorders' exact component={VaccineOrders} />
+          <Route path='/vaccinations' exact component={Vaccinations} />
+        </Switch> 
   );
 }
 
