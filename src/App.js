@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Vaccinations from './pages/Vaccinations'
-import VaccineOrders from './pages/VaccineOrders'
+import Home from './pages/HomePage/HomePageContainer'
+import Vaccinations from './pages/VaccinationsPage/VaccinationsPageContainer'
+import VaccineOrders from './pages/VaccineOrdersPage/VaccineOrdersPageContainer'
 
 const App = () => {
   return (
