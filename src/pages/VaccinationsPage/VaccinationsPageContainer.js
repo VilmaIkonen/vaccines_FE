@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Vaccintions = () => {
+const Vaccinations = () => {
   return (
     <div>
       <h1> page for showing data about vaccinations</h1>
@@ -8,4 +8,4 @@ const Vaccintions = () => {
   )
 }
 
-export default Vaccintions
+export default Vaccinations
