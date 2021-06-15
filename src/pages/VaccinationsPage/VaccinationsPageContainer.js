@@ -33,7 +33,26 @@ const Vaccinations = () => {
         <h1> page for showing data about vaccinations</h1>
         <Link to='/'><button>Back home</button></Link>
         <Link to='/vaccineorders'><button>Vaccine orders page</button></Link>
-        <pre>{JSON.stringify(data, null, 4)}</pre>
+        <table>
+          <thead>
+            <tr>
+              <th>Vaccination id</th>
+              <th>Bottle id</th>
+              <th>Recipient gender</th>
+              <th>Date of vaccination</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr>
+              <td>{item.vaccinationId}</td>
+              <td>{item.sourceBottle}</td>
+              <td>{item.gender}</td>
+              <td>{item.vaccinationDate}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table> 
       </div>
     )
   } 
