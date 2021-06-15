@@ -1,12 +1,4 @@
-import axios from 'axios'
+export const baseUrlVaccinations = 'http://localhost:5000/api/vaccinations'
 
-const baseUrlVaccinations = 'http://localhost:5000/api/vaccinations'
-const baseUrlVaccineOrders = 'http://localhost:5000/api/vaccineorders'
+export const baseUrlVaccineOrders = 'http://localhost:5000/api/vaccineorders'
 
-export const getAllVaccinations = async () => {
-  return axios.get(baseUrlVaccinations)
-}
-
-export const getAllVaccineOrders = async () => {
-  return axios.get(baseUrlVaccineOrders)
-}
