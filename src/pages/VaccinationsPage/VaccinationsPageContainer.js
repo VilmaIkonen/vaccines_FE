@@ -38,7 +38,6 @@ const Vaccinations = () => {
         <table>
           <thead>
             <tr>
-              <th>Vaccination id</th>
               <th>Bottle id</th>
               <th>Recipient gender</th>
               <th>Date of vaccination</th>
@@ -46,8 +45,7 @@ const Vaccinations = () => {
           </thead>
           <tbody>
             {data.map((item) => (
-              <tr>
-              <td>{item.vaccinationId}</td>
+              <tr key={item.vaccinationId}>
               <td>{item.sourceBottle}</td>
               <td>{item.gender}</td>
               <td>{item.vaccinationDate}</td>

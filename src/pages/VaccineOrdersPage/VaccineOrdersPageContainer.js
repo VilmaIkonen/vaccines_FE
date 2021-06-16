@@ -38,7 +38,6 @@ const VaccineOrders = () => {
           <table>
             <thead>
               <tr>
-                <th>Vaccine order id</th>
                 <th>Order number</th>
                 <th>Responsible person</th>
                 <th>Healthcare district</th>
@@ -49,8 +48,7 @@ const VaccineOrders = () => {
             </thead>
             <tbody>
               {data.map((item) => 
-              <tr>
-                <td>{item.id}</td>
+              <tr key={item.id}>
                 <td>{item.orderNumber}</td>
                 <td>{item.responsiblePerson}</td>
                 <td>{item.healthCareDistrict}</td>
