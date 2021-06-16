@@ -34,7 +34,34 @@ const VaccineOrders = () => {
         <h1> page for showing data about vaccine orders</h1>
         <Link to='/'><button>Back home</button></Link>
         <Link to='/vaccinations'><button>Vaccinations page</button></Link>
-        <pre>{JSON.stringify(data, null, 4)}</pre>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Vaccine order id</th>
+                <th>Order number</th>
+                <th>Responsible person</th>
+                <th>Healthcare district</th>
+                <th>Vaccine</th>
+                <th>No. of injections/bottle</th>
+                <th>Arrival date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((item) => 
+              <tr>
+                <td>{item.id}</td>
+                <td>{item.orderNumber}</td>
+                <td>{item.responsiblePerson}</td>
+                <td>{item.healthCareDistrict}</td>
+                <td>{item.vaccine}</td>
+                <td>{item.injections}</td>
+                <td>{item.arrived}</td>
+              </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     )
   } 
