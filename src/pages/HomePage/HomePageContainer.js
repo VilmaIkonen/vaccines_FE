@@ -1,18 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 
 const Home = () => {
-
-  axios({
-    method: 'GET',
-    url: 'http://localhost:5000/',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }).then(res => {
-    console.log(res.data.message)
-  })
 
   return (
     <div>
