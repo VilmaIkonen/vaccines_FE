@@ -8,6 +8,7 @@ const Vaccinations = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
+  // Getting data from DB after component render
   useEffect(() => {
     axios('http://localhost:5000/api/vaccinations')
       .then((response) => {
@@ -21,6 +22,7 @@ const Vaccinations = () => {
       })
   }, [])
 
+  // Condional randering of the page
   if(loading) {
     return 'Loading data from the database...'
   }
