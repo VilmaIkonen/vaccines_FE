@@ -29,7 +29,7 @@ const VaccineOrders = () => {
       { Header: 'Healthcare district', accessor: 'healthCareDistrict' },
       { Header: 'Vaccine', accessor: 'vaccine' },
       { Header: 'No. of injections/bottle', accessor: 'injections' },
-      { Header: 'Arrival date', accessor: 'arrived' },
+      { Header: 'Arrival date', accessor: 'arrived' }
     ],
   [])
 
@@ -46,10 +46,10 @@ const VaccineOrders = () => {
   }
   else {
      return (
-       <>
-        <h1>page for showing data about vaccine orders</h1>
-        <VaccineOrdersAllTable data={data} columns={columns}/>
-      </>
+        <>
+          <h1>page for showing data about vaccine orders</h1>
+          <VaccineOrdersAllTable data={data} columns={columns}/>
+        </>
     )
   } 
 }

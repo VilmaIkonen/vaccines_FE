@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { VaccinationsAllTable } from './VaccinationsAllTable'
 
 const Vaccinations = () => {
 
@@ -22,38 +22,32 @@ const Vaccinations = () => {
       })
   }, [])
 
+  // Setting columns for the table
+    const columns = useMemo(() => [    
+      { Header: 'Bottle id', accessor: 'sourceBottle' },
+      { Header: 'Recipient gender', accessor: 'gender' },
+      { Header: 'Date of vaccination', accessor: 'vaccinationDate' }
+    ],
+  [])
+
   // Condional randering of the page
   if(loading) {
-    return 'Loading data from the database...'
+    return (
+      <div>
+        <h1>page for showing data about vaccine orders</h1>
+        <p>Loading data from the database...</p>
+      </div>
+    )   
   }
   if(error) {
     return 'Error while loading data'
   }
   else {
      return (
-      <div>
-        <h1> page for showing data about vaccinations</h1>
-        <Link to='/'><button>Back home</button></Link>
-        <Link to='/vaccineorders'><button>Vaccine orders page</button></Link>
-        <table>
-          <thead>
-            <tr>
-              <th>Bottle id</th>
-              <th>Recipient gender</th>
-              <th>Date of vaccination</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <tr key={item.vaccinationId}>
-              <td>{item.sourceBottle}</td>
-              <td>{item.gender}</td>
-              <td>{item.vaccinationDate}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table> 
-      </div>
+      <>
+        <h1>page for showing data about vaccine orders</h1>
+        <VaccinationsAllTable data={data} columns={columns}/>
+      </>
     )
   } 
 }
