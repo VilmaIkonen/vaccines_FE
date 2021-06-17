@@ -41,7 +41,7 @@ export function VaccinationsAllTable({ data, columns }) {
   return (
     <div>
       <Link to='/'><button>Back home</button></Link>
-      <Link to='/vaccinations'><button>Vaccinations page</button></Link>
+      <Link to='/vaccineorders'><button>Vaccine orders page</button></Link>
       <input value={filterInput} onChange={handleFilterChange} placeholder={'Search source bottle id'}></input>
       <div>
         <table {...getTableProps()}>
