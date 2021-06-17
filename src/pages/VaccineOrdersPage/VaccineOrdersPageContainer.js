@@ -23,17 +23,15 @@ const VaccineOrders = () => {
   }, [])
 
   // Setting columns for the table
-  const columns = useMemo(() => [{
-    id: 'cols',
-    columns: [
-      {Header: 'Order number', accessor: 'orderNumber'},
-      {Header: 'Responsible person', accessor: 'responsiblePerson'},
-      {Header: 'Healthcare district', accessor: 'healthCareDistrict'},
-      {Header: 'Vaccine', accessor: 'vaccine'},
-      {Header: 'No. of injections/bottle', accessor: 'injections'},
-      {Header: 'Arrival date', accessor: 'arrived'}
-    ]
-  }], [])
+  const columns = useMemo(() => [    
+      { Header: 'Order number', accessor: 'orderNumber' },
+      { Header: 'Responsible person', accessor: 'responsiblePerson' },
+      { Header: 'Healthcare district', accessor: 'healthCareDistrict' },
+      { Header: 'Vaccine', accessor: 'vaccine' },
+      { Header: 'No. of injections/bottle', accessor: 'injections' },
+      { Header: 'Arrival date', accessor: 'arrived' },
+    ],
+  [])
 
   // Conditional randering of the page
   if(loading) {
